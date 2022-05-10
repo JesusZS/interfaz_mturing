@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controlar el objeto deslizante</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <!-- Controles  -->
+    <div id="container-controles">
+      <button id="btnPlay">
+        <img src="./resources/img/play.svg" alt="play" id="imgBtnPlay" />
+      </button>
+      <input
+        type="range"
+        id="reguladorVelocidad"
+        min="1"
+        max="20"
+        step="1"
+        value="1"
+      />
+    </div>
+
+    <!-- Cuerpo movil -->
+    <div id="zonaMovimiento">
+      <div id="cuerpoMovil" style="margin-left: 0px">
+        <!-- Cabezal -->
+        <img id="cabezal" src="./resources/img/cabezal.svg" alt="play" />
+      </div>
+    </div>
+
+    <div id="cinta">
+      <input id="casilla" type="text" value="p"/>
+      <input id="casilla" type="text" value="r"/>
+      <input id="casilla" type="text" value="u"/>
+      <input id="casilla" type="text" value="e"/>
+      <input id="casilla" type="text" value="b"/>
+      <input id="casilla" type="text" value="a"/>
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+      <input id="casilla" type="text" />
+    </div>
+
+
+<div>
+  <textarea name="" id="entrada_cinta" cols="20" rows="5"></textarea>
+</div>
+
+<button id="cargar">| cargar |</button>
+
+   <!-- <button id="tezt" type="button" value="+" onclick="setTask()">___</button>-->
+
+    <script>
+    let mv=0
+      function setTask() {
+        cabezal_ref = document.getElementById("cabezal");
+
+        let segundo_ca = document.createElement("img");
+
+        segundo_ca.id = 'cabezal';
+        segundo_ca.src = "./resources/img/cabezal.svg";
+
+        
+
+        let padre = document.getElementById("zonaMovimiento");
+
+        padre.innerHTML=''
+
+        let position=segundo_ca.getBoundingClientRect()
+        
+        mv+=32
+        
+        let posx= (position.left + window.scrollX)+32
+        let posy= (position.top + window.scrollY)
+
+
+        segundo_ca.style.left=posx + 'px';
+        segundo_ca.style.top=posy;
+
+        padre.insertAdjacentHTML("afterbegin", segundo_ca.outerHTML);
+
+
+
+
+        console.log("test....");
+        console.log(segundo_ca.outerHTML);
+
+      }
+
+    </script>
+
+    <!-- Scripts -->
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
