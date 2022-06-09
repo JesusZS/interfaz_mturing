@@ -15,7 +15,7 @@ export class ObjetoMovil {
     this.#vista = new VistaObjetoMovil();
     this.#direccion = "LTR";
     this.#enMovimiento = false;
-    this.#pixelsPorTiempo = 16;
+    this.#pixelsPorTiempo = 18;
     this.#distanciaMinimaAceptada = 100;
   }
 
@@ -25,7 +25,7 @@ export class ObjetoMovil {
 
   reanudarMovimiento() {
     this.#enMovimiento = true;
-    this.#moverObjeto();
+    this.#moverObjeto(5);
   }
 
   #calcularDistanciaBordesContenedor() {
